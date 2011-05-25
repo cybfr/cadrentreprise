@@ -1,0 +1,330 @@
+/* mise en page globale */
+body
+	{
+	margin: 0;
+	padding: 0;
+	background: white;
+	color: black;
+	font-size: 80%;
+	font-family: Arial, serif;
+	}
+
+img
+	{
+	border: 0 none black;
+	}
+
+/* entête pour popup*/
+#header2
+	{
+	height: 4em;
+	background-color: #a0a0ff;
+ 	}
+#header2 img
+	{
+	float: left;
+	margin: 10px 10px 10px 20px;
+	}
+#header2 p
+	{
+	margin: 0px;
+	padding-top: 2.5em;
+	padding-left: 50px;
+	font-weight: bold;
+	color: white;
+	font-size: 1em;
+	}
+/* chemin de fer */
+#cdeFer
+	{
+	display:none
+	}
+
+/* entête */
+#header
+	{
+	display:none
+ 	}
+#header img
+	{
+	float: left;
+	margin: 10px 10px 10px 20px;
+	}
+#header p
+	{
+	margin: 0px;
+	padding-top: 2.4em;
+	padding-left: 190px;
+	font-weight: bold;
+	color: white;
+	font-size: 2em;
+	}
+
+/* menu accès rapide */
+#menuhaut
+	{
+	display:none
+	}
+#menuhaut li
+	{
+	display: inline;
+	}
+#menuhaut a
+	{
+	color: black;
+	text-decoration: none;
+	}
+#menuhaut a:hover
+	{
+	text-decoration: underline;
+	}
+
+/* bloc pour toute la page sous entête */
+/* NE PAS UTILISER */
+/*#teteDePage
+	{
+	color: green;
+	background:#a0a0ff;
+	}*/
+
+/* menu vertical */
+#menu
+	{
+	display:none
+	}
+#menu ul
+	{
+	list-style-type: none;
+	padding: 0;
+	margin: 0 0.5em 0 0.5em;
+/*border-bottom: 1px solid black;*/
+	}
+#menu li a
+	{
+	padding-top : 1.2em; padding-bottom: 0.2em;
+/*border-top: 0.1em solid black;*/
+/*	border-bottom: 2px solid white;*/
+	display: block;
+	text-decoration: none;
+	height: 1.4em;								/* - */	line-height: 1.4em;							/* - */	text-align: right;								/* + */
+	color: white;
+	font-weight: bolder;
+ 	white-space:nowrap;
+	}
+#menu li a:hover
+	{
+	background: #ff9900;
+	color: black;
+	}
+
+/* formulaire */
+#menu p
+	{
+	margin: 4.5em 0 5px 1em;
+	font-weight: bold;
+	color: white;
+	}
+#menu form
+	{
+	margin:0 0 0 1em;
+	}
+#menu form .champ
+	{
+	width: 8em;
+	background: silver;
+	padding-left: 5px;
+	margin-left:20px;
+	}
+
+/* contenu global */
+#global
+	{
+	border: 1px solid white;
+	margin: 0 0 0 1.5em;
+	padding-left: 0.5em;
+	background-color: white;
+	}
+#global h1
+	{
+	font-weight: bold;
+	font-size: 150%;
+	padding-bottom: 0.2em;
+	border-bottom: 3px solid #ffff99;
+	font-variant: small-caps ;
+	text-indent: 5px;
+	color: #225500;
+	}
+#global h2
+	{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 110%;
+	font-weight: bold;
+	color: #228822;
+	}
+
+/* contenu global pour popup */
+#global2
+	{
+	padding-left: 0.5em;
+	margin-right: 0.5em;
+	}
+#global2 h1
+	{
+	font-weight: bold;
+	font-size: 150%;
+	padding-bottom: 0.2em;
+	border-bottom: 3px solid #ffff99;
+	font-variant: small-caps ;
+	color: #225500;
+	}
+#global2 h2
+	{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	font-size: 110%;
+	font-weight: bold;
+	color: #228822;
+	}
+
+	#global p
+		{
+/*color: black;*/
+		/*float: left;*/
+		}
+/*	#global ul
+		{
+		float: left;
+		}*/
+/*	#global img
+		{
+		position: absolute;
+		right: 1em;
+		}*/
+	#global a
+		{
+		color: #225500;
+		/*text-decoration: none;*/
+		}
+	#global a:visited
+		{
+		/*border-bottom: 1px dotted #225500;*/
+		color: #225500;
+		/*text-decoration: none;*/
+		}
+	#global a:hover
+		{
+		text-decoration: none;
+		}
+
+.paraEncadres
+	{
+	margin: 0px;
+	padding: 5px;
+	border: 1px solid blue;
+	color: black;
+	}
+.paraEncadres a
+	{
+	color: black;
+	text-decoration: none;
+	}
+.paraEncadres a:hover
+	{
+	text-decoration: underline;
+	}
+
+/* encart */
+#encart {
+	float: right;
+	width: 250px;
+	margin: 0 5px 5px 5px;
+	padding-top: 30px;
+	background: url(../images/posthaut.gif) left top no-repeat;
+	}
+#encart h3
+	{
+	font-size: 130%;
+	margin: 0 0 0 40px;
+	}
+#bloccadre
+	{
+	background: url(../images/postbas.gif) left bottom no-repeat;
+	padding: 0 0 25px 40px;
+	}
+#bloccadre ul
+	{
+	margin: 1em 40px 0 0;
+	padding:0;
+	}
+#bloccadre li
+	{
+	margin: 0;
+	list-style-image: url(../images/postpuce.gif);
+	}
+#bloccadre li a
+	{
+	color: black;
+	text-decoration: underline;
+	}
+#bloccadre li a:hover
+	{
+	text-decoration: none;
+	}
+
+/* boutons Retour */
+#btnRetour
+	{
+	display: none
+	}
+.CbtnRetour
+	{
+	display: none
+	}
+
+/* pied de page*/
+/* NE PAS UTILISER */
+/*#piedDePage
+	{
+	clear: both;
+	background: white;
+	margin:0;
+	}*/
+
+/* codes et citations */
+tt, code, samp {
+font-size: 1em;
+color: green;
+}
+blockquote {
+	border-width: 1px 1px 1px 8px;
+	border-style: solid;
+	border-color: #008000;
+	margin: 1em;
+	padding: 0 0.5em;
+	background: #d1f0af;
+	font-style: italic;
+}
+kbd {
+font-size : 1em;
+padding: 0px 2px;
+border: 1px solid gray;
+}
+pre {
+	border-width: 1px 1px 1px 8px;
+	border-style: solid;
+	border-color: #FF9900;
+	padding: 1em;
+	margin: 1em;
+	font-size: 110%;
+	background: #ffffcc;
+	width: 85%;
+	overflow: auto;
+}
+
+.formLibelle
+	{clear:left;float:left;text-align:right;width:7em;padding-bottom:20px;}
+.formZoneSaisie
+	{float:left;width:20em;padding-left:1em;padding-bottom:20px;}
+.formBouton
+	{padding-left:50px;padding-top:50px;}
