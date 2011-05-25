@@ -1,3 +1,0 @@
-includes/mySql.php
-.*
-!.htaccess
