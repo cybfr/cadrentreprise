@@ -3,7 +3,6 @@
 	<head>
 <meta name="verify-v1" content="MgKV0gv/cFuuXyf6/PYAz0d0fDfwG6BPR0Gw1wHZHAQ=" />
 		<title>CPE - Cadres pour l'entreprise - Accueil</title>
-<meta name="verify-v1" content="qlUEV7OHqfWfQl3X7S1xFF1qzZzATRFNUtIMlWM46LQ=" />
 		<meta name="description" content="Cadres pour l'Entreprise : Une association apportant aux cadres en recherche d'emploi l'aide technique et morale nécessaire pour favoriser le retour à l'activité et proposant aux entreprises un éventail de compétences et d'expériences dont la promotion est assurée par des actions de prospection collective">
 		<meta name="keywords" content="CPE,cadres,cadre,entreprises,entreprise,PME,association,Paris,Ile de France,experience,experimente,senior,competences,reussite,acteurs economiques,salons professionnels,mission,recherche,chomage,chomeur,emploi">
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
