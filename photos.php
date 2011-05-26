@@ -24,7 +24,7 @@ if( $extensionSource != 'png' )
 	if( move_uploaded_file( $_FILES['photo']['tmp_name'],
 		$dest_dossier . $src_fichier) )		$valid[] = "Image chargée avec succés ("
 			. "<a href='" . $dest_dossier . $dest_fichier . "'>Voir</a>)";	else		$erreurs[] = "Impossible d'uploader le fichier.<br />Veuillez vérifier que le dossier ".$dest_dossier." existe avec un chmod 755 (ou 777).";	}?>
-		<form method="POST" action="" enctype="multipart/form-data"><?phpif( !empty($erreurs) )
+		<form method="post" action="" enctype="multipart/form-data"><?phpif( !empty($erreurs) )
 	{	echo '<ul class="erreur">';	foreach( $erreurs as $erreur )		echo '<li>'.$erreur.'</li>';	echo '</ul>';	}if( !empty($valid) )
 	{	echo '<ul class="validation">';	foreach( $valid as $text )		echo '<li>'.$text.'</li>';	echo '</ul>';
 

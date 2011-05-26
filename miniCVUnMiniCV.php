@@ -20,20 +20,17 @@ $leTitre = urldecode( $line['titre'] );
 $leSousTitre = urldecode( $line['sousTitre'] );	
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN">
-<html XMLS="HTTP://WWW.W3.ORG/1999/XHTML" XML:LANG="FR" LANG="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="robots" content="noindex,nofollow">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="noindex,nofollow" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 <?php		
 // pour forcer phpdig à indexer après prise en compte du $_GET : ne marche pas ????
-echo '<div style="visibility:hidden;"></div>';
-
-echo	'<title>CPE - Compétences :&nbsp;'
-			. $leTitre;
+// <div style="visibility:hidden;"></div>' // no div in head
 ?>
-		</title>
+<title>CPE - Compétences :&nbsp;<?php  echo $leTitre; ?></title>
 		<style type="text/css">
 		td
 			{background-color:#efefef;border:5px ridge #a0a0ff;}
@@ -105,7 +102,7 @@ $sncfLiens = array_merge( $sncfLiens, array(
 	'miniCVminiCV.php?retour=' . $_GET[ 'retour' ]
 		//. '&titre=' . rawurlencode( $leTitre )
 		//. '&sousTitre=' . rawurlencode( $leSousTitre )
-		. '&idRubrique=' . $_GET['idRubrique'] ) );
+		. '&amp;idRubrique=' . $_GET['idRubrique'] ) );
 
 $nomPage = 'projetFlash/' . $_GET['ref'];
 
@@ -130,14 +127,14 @@ $rangCol = 0;
 $queryString = 'retour=' . rawurlencode( $_GET['retour'] )
 	//. '&titre=' . rawurlencode( $leTitre )
 	//. '&sousTitre=' . rawurlencode( $leSousTitre )
-	. '&idRubrique=' . $_GET[ 'idRubrique' ];
+	. '&amp;idRubrique=' . $_GET[ 'idRubrique' ];
 require_once "includes/unProjetFlash.php";
 $line = mysql_fetch_assoc($result);
 //echo '<r>...'.$line['titre'].'...'.$nbrFiches;
 //echo '<br>...'.$query;
 echo '<table style="margin: 10px 20px 10px 10px; padding: 5px;">';
 	affichageHTMLunProjetFlash( $line, 0, $queryString );
-echo '</td></tr></table>';
+echo '</tr></table>';
 
 echo		'<p>&nbsp;</p><p>Pour prendre contact :</p>';
 echo		'<ul>';
@@ -151,8 +148,8 @@ if( $_GET['telephone'] != '' )
 	}
 else
 	echo		'<li style="padding-top:20px;">';
-echo				'<a href="#" onClick="javascript:window.open(\'contactSaisie.php?'
-						. 'destinataire=CEmpl&subject=contact pour projet de référence ' . $_GET['ref']
+echo				'<a href="#" onclick="javascript:window.open(\'contactSaisie.php?'
+						. 'destinataire=CEmpl&amp;subject=contact pour projet de référence ' . $_GET['ref']
 						. '\',\'Contact\',\'width=600,height=580, scrollbars=yes\')">'
 					. '<b>contactez CPE</b></a> en précisant la référence de ce dossier (<b>'
 						. $_GET['ref'] . '</b>)</li>';
@@ -163,14 +160,14 @@ if( $_GET['retour'] == "espaceActifs/ACTdonnees.php" )
 else
 	{
 	$queryString = 'retour=' . rawurlencode( $_GET['retour'] )
-		. '&idRubrique=' . $_GET[ 'idRubrique' ];
+		. '&amp;idRubrique=' . $_GET[ 'idRubrique' ];
 	echo 			'<a href="miniCVminiCV.php?'
 						. $queryString . '">';
 	}
 ?>
-					<img src="images/btnRetour.gif">
+					<img src="images/btnRetour.gif" alt="Retour" />
 				</a>
 			</div>
 		</div>
-	</BODY>
-</HTML>
+	</body>
+</html>

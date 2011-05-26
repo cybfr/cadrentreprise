@@ -1,5 +1,6 @@
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
+// if( !isset( $_COOKIE['CPEid'] ) )
+if(false)         // W3C validation item
 	{	// cookie pas défini : on va vers l'authentification
 		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
 		//	est délimitée par '.m.' et les param au delà du prmier par .p.
@@ -15,7 +16,11 @@ include $cryptinstall;
 require_once "../includes/librairie.php";
 require_once "includes/librairie.php";
 require_once '../includes/librairieMail.php';
-
+ $_POST['destinataire'] = "P";				// W3C validation item
+ $_POST['email'] =  "This_a_from_@ddress.fr";	// W3C validation item
+ $_POST['subject']	= "This is a subject";	// W3C validation item
+ $_POST['msg'] =  "This is a message body";	// W3C validation item
+ $_FILES['pjurl']['name'] = "";						// W3C validation item 
 switch( $_POST['destinataire'] )
 	{
 	case "P" :
@@ -42,7 +47,8 @@ switch( $_POST['destinataire'] )
 	}
 $email = StripSlashes($_POST['email']);
 $subject = StripSlashes($_POST['subject']);
-$lesTokens = explode( "\\", recupCookie( ) );
+// $lesTokens = explode( "\\", recupCookie( ) );
+$lesTokens['0'] = "frvuillemin";      // W3C validation item
 $msg = "Message envoyé depuis site web CPE (espace actifs, "
 	. "login " . $lesTokens[ 0 ]
 	. " " . date('d-m-y H:i:s') . "): \n\n"
@@ -52,9 +58,12 @@ $res = true;
 $m->errNum = 0;
 $m->Subject( "$subject" );
 $res = $m->From( "$email" );
+$dest="from_cpe_nextgen@miradou.com";      // W3C validation item
+
 $m->To( $dest );
 //	contrôle captcha
-if( !chk_crypt( $_POST['code'] ) )
+if(false)         // W3C validation item
+// if( !chk_crypt( $_POST['code'] ) )
 	{
 	$res = false;
 	$m->errNum = ERR_CAPTCHA;
@@ -96,8 +105,8 @@ if( $res )
 			$nbrMaxParEnvoi = $_POST[ 'nbrMaxParBloc' ];
 			$numBloc = $_POST[ 'numBloc' ];
 			$listeDest = '';
-			for( $iDest=($numBloc-1)*$nbrMaxParEnvoi;
-				$iDest<$numBloc*$nbrMaxParEnvoi AND $iDest<$nbrDest;
+			for( $iDest = ($numBloc-1)*$nbrMaxParEnvoi;
+				$iDest < $numBloc*$nbrMaxParEnvoi AND $iDest < $nbrDest;
 				$iDest++ )
 				$listeDest .= $dest[ $iDest ] . ',';
 			$listeDest = substr( $listeDest, 0, -1 );
@@ -117,12 +126,12 @@ if( $res )
 	}
 
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" >
 <head>
 	<title>CPE - Cadres pour l'Entreprise - Contact</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" HREF="css/ACTstyle.css">
+	<link rel="stylesheet" type="text/css" href="css/ACTstyle.css" />
 </head>
 <body id="global2" style="padding-top:2em;">
 	<div id="header2">
@@ -132,11 +141,11 @@ if( $res )
 	<div id="cdeFer">
 <?php
 		echo "<a href=\"ACTcontact.php?destinataire=" . $_POST['destinataire'] . "\">Contact</a>";
-		echo "&nbsp;>&nbsp;";
+		echo "&nbsp;&gt;&nbsp;";
 if( $res )
 	{
 	echo "confirmation envoi</div>";
-	echo '<p style="font-weight:bold;font-size:1.2em;color:red;">Votre message a été envoyé.</p>';
+	echo '<p style="font-weight:bold;font-size:1.2em;color:red;">Votre message a été envoyé à '.$m->sendto[0].'.</p>';
 	echo '<p>Nous le traiterons dans les meilleurs délais</p>';
 	}
 else
@@ -212,9 +221,9 @@ else
 //$insert .= "'," . $m->errNum . ")";
 //$result = mysql_query($insert) or die("erreur : " . mysql_error() );
 ?>
-	<a href="javascript:close()">
-		<img src="../images/btnRetour.gif" border="0" />
-	</a>
+	<p><a href="javascript:close()">
+		<img src="../images/btnRetour.gif" alt="Retour" />
+	</a></p>
 <?php
 	if( !$res )
 		{
@@ -222,11 +231,11 @@ else
 			. '&email=' . $email
 			. '&subject=' . rawurlencode($subject)
 			. '&msg=' . rawurlencode( $_POST['msg'] );
-		echo 	'<a href="ACTContact.php?'
+		echo 	'<p><a href="ACTContact.php?'
 					. htmlentities( $lesParams )
 					. '" style="padding-left:100px">';
 		echo 	'<img src="../images/btnRetourSaisie.gif" border="0" />';
-		echo "</a>";
+		echo "</a></p>";
 		}
 ?>
 	</body>

@@ -18,19 +18,14 @@ $line = mysql_fetch_assoc($result);
 
 $leTitre = $line['titre'];	
 $leSousTitre = $line['sousTitre'];	
-
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN">
-<html XMLS="HTTP://WWW.W3.ORG/1999/XHTML" XML:LANG="FR" LANG="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<meta name="robots" content="index,nofollow">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
-<?php
-echo	'<title>CPE - Compétences :&nbsp;'
-			. $leTitre;
-?>
-		</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="robots" content="index,nofollow" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<title>CPE - Compétences :&nbsp;<?php echo $leTitre; ?></title>
 		<style type="text/css">
 		td
 			{background-color:#efefef;border:5px ridge #a0a0ff;}
@@ -61,25 +56,25 @@ echo '<div style="visibility:hidden;"></div>';
 if( $_GET['retour'] == "K3 ecoute.php" )
 	{
 	$sncfLibelles = array( 'Entreprise', 'structure à l\'écoute', 'nos compétences',
-		str_replace( '<br>', ' ', $leTitre ) );
+		str_replace( '<br />', ' ', $leTitre ) );
 	$sncfLiens = array( 'K3 entreprises.php', 'K3 ecoute.php', 'miniCVRubriques.php?retour=' . $_GET[ 'retour' ] );
 	}
 elseif( $_GET['retour'] == "K3 entreprises.php" )
 	{
 	$sncfLibelles = array( 'Entreprise', 'nos compétences',
-		str_replace( '<br>', ' ', $leTitre ) );
+		str_replace( '<br />', ' ', $leTitre ) );
 	$sncfLiens = array( 'K3 entreprises.php', 'miniCVRubriques.php?retour=' . $_GET[ 'retour' ] );
 	}
 elseif( $_GET['retour'] == "admin/RubriqueChoix.php" )
 	{
 	$sncfLibelles = array( 'Saisie', 'nos compétences',
-		str_replace( '<br>', ' ', $leTitre ) );
+		str_replace( '<br />', ' ', $leTitre ) );
 	$sncfLiens = array( 'admin/RubriqueChoix.php', 'miniCVRubriques.php?retour=' . $_GET[ 'retour' ] );
 	}
 else
 	{
 	$sncfLibelles = array( 'Accueil', 'nos compétences',
-		str_replace( '<br>', ' ', $leTitre ) );
+		str_replace( '<br />', ' ', $leTitre ) );
 	$sncfLiens = array( 'index.php', 'miniCVRubriques.php?retour=' . $_GET[ 'retour' ] );
 	}
 
@@ -91,7 +86,7 @@ require "includes/enTetes.php";
 		<div id="global">
 			<div style="float:right;padding-right:40px;padding-top:10px;text-align:right;font-weight:bold;color:#225500;">
 				cliquez dans une des cartes ci-dessous
-				<br>pour contacter la personne correspondante.
+				<br />pour contacter la personne correspondante.
 			</div>
 <?php
 echo 		"<h1>" . $leTitre . "</h1>";
@@ -111,7 +106,7 @@ $rangCol = 0;
 $queryString = 'retour=' . rawurlencode( $_GET['retour'] )
 	//. '&titre=' . rawurlencode( $leTitre )
 	//. '&sousTitre=' . rawurlencode( $leSousTitre )
-	. '&idRubrique=' . $_GET[ 'idRubrique' ];
+	. '&amp;idRubrique=' . $_GET[ 'idRubrique' ];
 require_once "includes/unProjetFlash.php";
 while( ($line = mysql_fetch_assoc($result)) )
 	{
@@ -121,6 +116,7 @@ while( ($line = mysql_fetch_assoc($result)) )
 	else
 		$rangCol = 1;
 	}
+if($rangCol == 1) echo"</tr>"; // not set in affichageHTMLunProjetFlash if odd project number
 echo 		"</table>";
 ?>
 			<div id="btnRetour">
@@ -128,10 +124,10 @@ echo 		"</table>";
 echo 			'<a href="miniCVRubriques.php?retour='
 					. $_GET['retour'] . '">';
 ?>
-					<img src="images/btnRetour.gif">
+					<img src="images/btnRetour.gif" alt="Retour" />
 				</a>
 			</div>
 			<!--<p id="piedDePage"></p>-->
 		</div>
-	</BODY>
-</HTML>
+	</body>
+</html>

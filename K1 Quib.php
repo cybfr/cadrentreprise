@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN">
-<html XMLS="HTTP://WWW.W3.ORG/1999/XHTML" XML:LANG="FR" LANG="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'entreprise - qui sommes-nous</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
@@ -18,15 +18,13 @@ require "includes/enTetes.php";
 <!-- Contenu -->
 		<div id="global">
 			<h1>Qui sommes nous ?</h1>
-			<p>Une association loi 1901, née en 1979 <br>qui adopte son intitulé définitif&nbsp;
-				<font face="Arial" color="#FF0033" size="2">
-					&quot;Cadres pour l'Entreprise&quot;
-				</font>
+			<p>Une association loi 1901, née en 1979 <br />qui adopte son intitulé définitif&nbsp;
+					&quot;<span style="color: red;">Cadres pour l'Entreprise</span>&quot;
 				&nbsp;en 1983&nbsp;
 			</p>
 			<table>
 				<tr>
-					<td width="65%">
+					<td style="width: 65%">
 						<h2>Notre objectif</h2>
 						<ul>
 							<li>Apporter aux cadres en recherche d'emploi l'aide technique et morale nécessaire pour favoriser le retour à l'activité
@@ -35,8 +33,8 @@ require "includes/enTetes.php";
 							</li>
 						</ul>
 					</td>
-					<td width="25%">
-						<img src="images/equipe.jpg" width="174" height="129">
+					<td style="width: 25%">
+						<img src="images/equipe.jpg" width="174" height="129" alt="equipe" />
 					</td>
 				</tr>
 				<tr>
@@ -50,7 +48,7 @@ require "includes/enTetes.php";
 						</ul>
 					</td>
 					<td>
-						<img src="images/Reunion hebdo-2.jpg" width="174" height="129">
+						<img src="images/Reunion hebdo-2.jpg" width="174" height="129" alt="Réunion" />
 					</td>
 				</tr>
 				<tr>
@@ -63,7 +61,7 @@ require "includes/enTetes.php";
 						</ul>
 					</td>
 					<td>
-						<img src="images/AG1.jpg" width="174" border="0">
+						<img src="images/AG1.jpg" width="174" alt="AG" />
 					</td>
 				</tr>
 				<tr>
@@ -75,7 +73,7 @@ require "includes/enTetes.php";
 							<li>...</li>
 						</ul>
 						<div style="padding-left:40px;" >
-							<a href="K1%20partenaires.php" target="_self">
+							<a href="K1%20partenaires.php">
 								En savoir plus ?
 							</a>
 						</div>
@@ -86,7 +84,7 @@ require "includes/enTetes.php";
 				</tr>
 			</table>
 			<div id="btnRetour">
-				<a href="index.php"><img src="images/btnRetour.gif"></a>
+				<a href="index.php"><img src="images/btnRetour.gif" alt="Retour" /></a>
 			</div>
 			<!--<p id="piedDePage"></p>-->
 		</div>

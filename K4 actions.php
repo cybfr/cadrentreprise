@@ -1,11 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
-	<HEAD>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+	<head>
 		<title>CPE - Cadres pour l'Entreprise - actions</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
-	</HEAD>
+	</head>
 	<body>
 <!-- en-têtes -->
 <?php
@@ -26,37 +26,36 @@ require "includes/enTetes.php";
 			<h2>Pour maintenir le dialogue avec les entreprises</h2>
 			<table>
 				<tr>
-					<td width="65%">
+					<td style="width: 65%;">
 						<p>CPE est présent dans les salons professionnels.</p>
 						<p>CPE est exposant avec son propre stand et participe à
 						la plupart des salons professionnels en région parisienne.</p>
-						<p>Chaque année cela représente plus de :
+						<p>Chaque année cela représente plus de :</p>
 							<ul>
 								<li>600 sociétés visitées</li>
 								<li>250 emplois récoltés</li>
 								<li>70 sociétés en contact</li>
 							</ul>
-						</p>
 					</td>
-					<td width="25%">
-							<IMG SRC="images/salon3.jpg" height="200" >
+					<td>
+							<img src="images/salon3.jpg" height="200" alt="Salon" />
 					</td>
 				</tr>
 			</table>
 			<h2>Pour aller au devant des entreprises</h2>
-			<p>CPE organise des opérations terrain en binômes pour
+			<p>CPE organise des opérations terrain en binômes pour</p>
 			<ul>
 				<li>Se faire identifier par les entreprises</li>
 				<li>Rencontrer les décideurs</li>
 				<li>Détecter les emplois cachés</li>
-			</ul></p>
+			</ul>
 			<h1>Un sacré training pour nos adhérents !</h1>
 			<div id="btnRetour">
 				<a href="K4%20cadres.php">
-					<img src="images/btnRetour.gif">
+					<img src="images/btnRetour.gif" alt="Retour" />
 				</a>
 			</div>
 			<!--<p id="piedDePage"></p>-->
 		</div>
-	</BODY>
-</HTML>
+	</body>
+</html>

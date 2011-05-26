@@ -1,5 +1,4 @@
 <?php
-
 function getEMailFromPseudo( $pseudo )
 	{
 	$query = "SELECT A.eMail FROM tblAdherents AS A, tblMdp AS M"
@@ -17,8 +16,9 @@ function getEMailFromPseudo( $pseudo )
 		}
 	}
 
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
+// if( !isset( $_COOKIE['CPEid'] ) )
+if(false)         // W3C validation item
+		{	// cookie pas défini : on va vers l'authentification
 		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
 		//	est délimitée par '.m.' et les param au delà du prmier par .p.
 	$lUri = $_SERVER[ 'REQUEST_URI'];
@@ -32,13 +32,13 @@ include $cryptinstall;
 require_once "../includes/librairie.php";
 require_once "includes/librairie.php";
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr" >
 	<head>
 		<title>CPE - Espace Adhérents Actifs</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" HREF="css/ACTstyle.css">
-		<style>
+		<link rel="stylesheet" type="text/css" href="css/ACTstyle.css" />
+		<style type="text/css">
 			em {color:red; font-style:normal; text-decoration:bold;}
 		</style>
 	</head>
@@ -71,12 +71,12 @@ else
 			Contact
 		</div>
 <!-- Contenu -->
-		<form id="mail" action="ACTContactEnvoi.php" method="post" enctype="multipart/form-data" name="form">
+		<form id="mail" action="ACTContactEnvoi.php" method="post" enctype="multipart/form-data">
 			<table border="0" cellpadding="0" cellspacing="0" style="margin-top:10px;">
-				<colgroup width="110px"><colgroup width="145px">
+				<colgroup width="110px"></colgroup><colgroup width="145px"></colgroup>
 				<tr><td><p>Destinataire&nbsp;&nbsp;</p></td>
 					<td>
-						<div align="left">
+						<div style="text-align: left">
 <?php
 // paramètre 'dest' :
 //		P, W ou CEmpl
@@ -113,7 +113,7 @@ if( $nbrDest == 1 )
 		}
 	else
 		{	// pseudo
-		echo '<input type="hidden" name="destinataire" value="' . $_GET['dest'] . '">';
+		echo '<input type="hidden" name="destinataire" value="' . $_GET['dest'] . '" />';
 		echo $lesDestinataires[0][1];
 		}
 	}
@@ -125,6 +125,7 @@ else
 		echo '<option value="' . $lesDestinataires[$i][0] . '">'
 			. $lesDestinataires[$i][1] . '</option>';
 		}
+	echo '</select>';
 	}
 ?>
 						</div>
@@ -136,7 +137,7 @@ else
 //echo '<br>...' . $mailReponse;
 			if( $mailReponse != '' )
 				{
-				echo '<input type="hidden" name="email" value="' . $mailReponse . '">';
+				echo '<input type="hidden" name="email" value="' . $mailReponse . '" />';
 				echo $mailReponse;
 				}
 			else
@@ -156,17 +157,16 @@ else
 					ENT_QUOTES, "UTF-8" );
 ?>
 					" name="subject" title="saisissez l'objet de votre message (10 caractères au moins)"
-						size="40">
+						size="40" />
 			</td></tr>
-
 			<tr><td>Message<em>*</em></td>
 			<td style="border:none;">
 				<textarea rows="12" name="msg" cols="40" title="saisissez le texte de votre message (10 caractères au moins)">
 <?php
 			if( isset( $_GET[ 'msg' ] ) )
 				echo stripcslashes( stripcslashes( $_GET[ 'msg' ] ) );
-			echo '</textarea>';
 ?>
+				</textarea>
 			</td></tr>
 
 			<tr><td>Fichier à joindre au message (facultatif)</td>
@@ -176,22 +176,22 @@ else
 						size="40" name="pjurl" maxlength="100000"
 						title="choisissez (optionnel) un fichier à joindre au message" />
 			</td></tr>
-			<tr><td>Recopiez le code ci-contre<em>*</em><br>(mesure antispam)</td>
-			<td style="border:none;">
-				<table><tr><td style="border:none;padding-top:5px;">
+			<tr><td>Recopiez le code ci-contre<em>*</em><br />(mesure antispam)</td>
+			<td style="border: none;">
+				<table><tr><td style="border: none;padding-top: 5px;">
 <?php
 					echo dsp_crypt(0,1);
 ?>
 					</td>
-					<td style="border:none;"><input type="text" name="code"></td></tr>
+					<td style="border: none;"><input type="text" name="code" /></td></tr>
 				</table> 
 			</td></tr>
 			</table>
 			<div style="margin:10px 0 0px 20px;clear:both;">
 				<a href="javascript:close('contact')">
-					<img src="../images/btnAnnuler.gif" border="0">
+					<img src="../images/btnAnnuler.gif" alt="Annuler" />
 				</a>
-				<input type="image" value="Envoyer" src="../images/btnValider.gif">
+				<input type="image" value="Envoyer" src="../images/btnValider.gif" />
 			</div>
 		</form>
 	</body>

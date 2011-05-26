@@ -1,11 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN">
-<html XMLS="HTTP://WWW.W3.ORG/1999/XHTML" XML:LANG="FR" LANG="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'Entreprise - rubriques projets flash</title>
-<meta name="description" content="Cadres pour l'Entreprise : profils de cadres confirmés">
-		<meta name="keywords" content="CPE,cadres,cadre,entreprises,entreprise,profils,Paris,Ile de France,experience,experimente,senior,competences,reussite,mission,recherche,chomage,emploi">
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta name="description" content="Cadres pour l'Entreprise : profils de cadres confirmés" />
+		<meta name="keywords" content="CPE,cadres,cadre,entreprises,entreprise,profils,Paris,Ile de France,experience,experimente,senior,competences,reussite,mission,recherche,chomage,emploi" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
@@ -43,7 +43,7 @@ require "includes/enTetes.php";
 <!-- Contenu -->
 		<div id="global">
 			<h1>Vivier de compétences</h1>
-			<table><tr valign="top"><td width="35%">
+			<table><tr valign="top"><td style="width: 35%">
 				<p>Des hommes et des femmes immédiatement opérationnels dans tous les secteurs de l'entreprise</p>
 				</td><td>
 <?php
@@ -65,19 +65,21 @@ while( ($line = mysql_fetch_assoc($result)) )
 			$queryString = 'retour=' . rawurlencode( $_GET['retour'] )
 				//. '&titre=' . rawurlencode( stripcslashes( $line[ 'titre' ] ) )
 				//. '&sousTitre=' . rawurlencode( stripcslashes( $line[ 'sousTitre' ] ) )
-				. '&idRubrique=' . $line[ 'idRubrique' ];
+				. '&amp;idRubrique=' . $line[ 'idRubrique' ];
 		echo 			$queryString . '">';
-		echo 			'<b>' . stripcslashes( $line[ 'titre' ] ) . '</b>';
+		echo 			'<b>' . htmlspecialchars(stripcslashes($line['titre'])) . '</b>';
 		if( $line[ 'sousTitre' ] != '' )
-			echo			' : ' . stripcslashes( $line[ 'sousTitre' ] );
-		echo 	"</a></p>";
+			echo			' : ' . htmlspecialchars(stripcslashes($line['sousTitre']));
+		echo 	"</a></p>
+		";
 		}
-echo 			'</td></tr></table>';
-echo			'<div id="btnRetour">';
-echo 				'<a href="' . ( $_GET['retour'] )
-						. '"><img src="images/btnRetour.gif"></a>';
-echo			'</div>';
 ?>
+</td></tr></table>
+<div id="btnRetour">
+<a href=" <?php echo $_GET['retour']; ?>" >
+<img src="images/btnRetour.gif" alt="Retour" /></a>
+</div>
+
 			<!--<p id="piedDePage"></p>-->
 		</div>
 	</body>

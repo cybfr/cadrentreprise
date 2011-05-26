@@ -1,15 +1,4 @@
-<!-- en-têtes -->
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
-		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
-		//	est délimitée par '.m.' et les param au delà du prmier par .p.
-	$lUri = $_SERVER[ 'REQUEST_URI'];
-	$lUrl = 'Location: ../identification1.php?url='
-		. urlencode( $lUri );
-	header( $lUrl );
-	exit;
-	}
 $titrePage = "initiation réseau";
 $sncfLibelles = array( 'Accueil','Activités','Atelier Initiation Réseau' );
 $sncfLiens = array( 'ACTAccueil.php','ACTactivites.php' );
@@ -40,6 +29,5 @@ require "includes/ACTenTetes.php";
 			</ul>
 		</div>
 	<!--<p id="piedDePage"></p>-->
-		</div>
 	</body>
 </html>

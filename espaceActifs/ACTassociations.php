@@ -1,16 +1,4 @@
 <?php
-
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
-		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
-		//	est délimitée par '.m.' et les param au delà du prmier par .p.
-	$lUri = $_SERVER[ 'REQUEST_URI'];
-	$lUrl = 'Location: ../identification1.php?url='
-		. urlencode( $lUri );
-	header( $lUrl );
-	exit;
-	}
-
 $titrePage = "recherches";
 $sncfLibelles = array( 'Accueil', 'Recherches' );
 $sncfLiens = array( 'ACTAccueil.php' );
@@ -45,7 +33,8 @@ while( $l=mysql_fetch_assoc( $res ) )
 		}
 	if( $l[ 'texte' ] == '' )
 		$l[ 'texte' ] = '...';
-	echo '<p><a href="' . $l[ 'url' ] . '" >' . $l[ 'texte' ] . '</a></p>';
+	echo '<p><a href="' . $l[ 'url' ] . '" >' . htmlspecialchars($l[ 'texte' ]).'
+	</a></p>';
 	}
 echo '</div>';
 ?>

@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'Entreprise - salons</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
@@ -18,60 +18,61 @@ require "includes/enTetes.php";
 <!-- Contenu -->
 		<div id="global">
 		<h1>Salons professionnels 2010</h1>
-		<br>
-		<font size="-1">
+		<br />
+		<span>
 			Extrait de la liste des salons auxquels Cadres pour l'Entreprise a participé, à titre d'exposant
-		</font>
-		<table style="text-align:center;color:navy;font-style:italic;" border="1" cellspacing="0" bordercolor="#0033CC" bordercolordark="white" bordercolorlight="#0000CC">
+		</span>
+		<table style="text-align:center;color:navy;font-style:italic; border-color: #0033CC" border="1" cellspacing="0">
 			<tr>
-				<TD>Nom</TD>
-				<TD>Type</TD>
-				<TD>Dates</TD>
-				<TD>Lieu</TD>
+				<td>Nom</td>
+				<td>Type</td>
+				<td>Dates</td>
+				<td>Lieu</td>
 			</tr>
 			<tr>
-				<TD>InterClima + Elec</TD>
-				<TD>Efficacité énergétique</TD>
-				<TD>9 au 12 février</TD>
-				<TD>Villepinte</TD>
+				<td>InterClima + Elec</td>
+				<td>Efficacité énergétique</td>
+				<td>9 au 12 février</td>
+				<td>Villepinte</td>
 			</tr>
 			<tr>
-				<TD>Industrie Paris</td>
-				<TD>Fabrication industrielle</TD>
-				<TD>23 au 26 mars</TD>
-				<TD>Villepinte</TD>
+				<td>Industrie Paris</td>
+				<td>Fabrication industrielle</td>
+				<td>23 au 26 mars</td>
+				<td>Villepinte</td>
 			</tr>
 			<tr>
-				<TD>CIEN</td>
-				<TD>Électronique</TD>
-				<TD>1er au 3 juin</TD>
-				<TD>Villepinte</TD>
+				<td>CIEN</td>
+				<td>Électronique</td>
+				<td>1er au 3 juin</td>
+				<td>Villepinte</td>
 			</tr>
 			<tr>
-				<TD>Midest</td>
-				<TD>sous-traitance</TD>
-				<TD>2 au 5 novembre</TD>
-				<TD>Villepinte</TD>
+				<td>Midest</td>
+				<td>sous-traitance</td>
+				<td>2 au 5 novembre</td>
+				<td>Villepinte</td>
 			</tr>
 			<tr>
-				<TD>Equip'Baie</td>
-				<TD>Fermetures</TD>
-				<TD>16 au 19 novembre</TD>
-				<TD>Porte de Versailles</TD>
+				<td>Equip'Baie</td>
+				<td>Fermetures</td>
+				<td>16 au 19 novembre</td>
+				<td>Porte de Versailles</td>
 			</tr>
-		</TABLE>
+		</table>
 		<p style="line-height:100%; margin-top:0; margin-bottom:0;">
-			<font face="Arial" size="2"><b><br>
+			<span><b><br />
 					Pour la plupart des autres salons professionnels, Cadres pour l'Entreprise obtient des invitations gratuites mises à la disposition des adh&eacute;rents.
 				</b>
-			</font>
+			</span>
 		</p>
 		<p style="line-height:100%; margin-top:0; margin-bottom:0;">
-		<br><br><br>
+		<br /><br /><br /></p>
 		<div id="btnRetour">
 			<a href="K2%20actualites.php">
-				<img src="images/btnRetour.gif">
+				<img src="images/btnRetour.gif" alt="retour" />
 			</a>
+		</div>
 		</div>
 		<!--<p id="piedDePage"></p>-->
 	</body>

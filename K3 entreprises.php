@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'Entreprise - entreprises</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
@@ -19,9 +19,9 @@ require "includes/enTetes.php";
 			<h1>Cadre pour l'entreprise, c'est...</h1>
 			<table>
 				<tr>
-					<td width="25%">
+					<td style="width: 25%;">
 						<a href="miniCVRubriques.php?retour=K3%20entreprises.php">
-							<img src="images/image membre.jpg" width="172" height="187" border="0">
+							<img src="images/image membre.jpg" width="172" height="187" alt="Membre" />
 						</a>
 		<p>
 						<a href="miniCVRubriques.php?retour=K3%20entreprises.php">
@@ -30,7 +30,7 @@ require "includes/enTetes.php";
 					</td>
 					<td>
 						<p>
-							<img src="images/blue01_next_3.gif" width="9" height="9" border="0" alt="blue01_next.gif">
+							<img src="images/blue01_next_3.gif" width="9" height="9" alt="blue01_next.gif" />
 							Une
 							<a href="K3%20ecoute.php">
 								structure &agrave; votre &eacute;coute
@@ -38,14 +38,14 @@ require "includes/enTetes.php";
 							et pr&ecirc;te &agrave; vous aider dans la recherche de profils en ad&eacute;quation avec vos besoins
 						</p>
 						<p>
-							<img src="images/blue01_next_3.gif" width="9" height="9" border="0" alt="blue01_next.gif">
+							<img src="images/blue01_next_3.gif" width="9" height="9" alt="blue01_next.gif" />
 							Des cadres issus de Grands Groupes, de PME, de PMI exp&eacute;riment&eacute;s dans  diff&eacute;rents domaines de comp&eacute;tence
 							<a href="K3%20prestation.php">
 								qui vous offrent leurs services
 							</a>
 						</p>
 						<p>
-							<img src="images/blue01_next_3.gif" width="9" height="9" border="0" alt="blue01_next.gif">
+							<img src="images/blue01_next_3.gif" width="9" height="9" alt="blue01_next.gif" />
 							Plus de 100  hommes et femmes, tous cadres confirm&eacute;s imm&eacute;diatement op&eacute;rationnels dans  divers secteurs d'activit&eacute;, que vous pouvez
 							<a href="miniCVRubriques.php?retour=K3%20entreprises.php">
 								contacter directement

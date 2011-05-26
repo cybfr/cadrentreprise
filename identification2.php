@@ -32,7 +32,7 @@ $leMdp = $_POST['mdp'];
 $query = "SELECT * FROM tblMdp where login='$leLogin' and mdp='$leMdp'";
 $result = mysql_query($query) or die("erreur 3");
 $nbrLgns = mysql_num_rows($result);
-//echo '<br>ident2.php...'.$query.'<br>...'.$nbrLgns.'...'.$_POST[ 'dest' ].'...'.$_POST['dest'];
+//  echo '<br>ident2.php...'.$query.'<br>...'.$nbrLgns.'...'.$_POST[ 'dest' ].'...'.$_POST['dest'];
 if( $nbrLgns == 1 )
 	{	// login/mdp OK
 	$ligne = mysql_fetch_assoc($result);

@@ -1,6 +1,7 @@
 <!-- en-têtes -->
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
+//if( !isset( $_COOKIE['CPEid'] ) )
+if(false)         // W3C validation item
 	{	// cookie pas défini : on va vers l'authentification
 		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
 		//	est délimitée par '.m.' et les param au delà du prmier par .p.
@@ -59,24 +60,24 @@ echo	'<h1>Réseau CPE de ' . $login . '</h1>';
 		echo '<h2>' . $nbrMembres . ' membres dans votre réseau</h2>';
 		echo '<div style="margin-left:20px;margin-top:20px;">';
 		echo '<table cellspacing="0" cellpadding="2">';
-		echo	'<tr><th>id</th><th>nom</th><th>métier (adhérent)</th><th>profession (adhérent)</th><th>formation (adhérent)</th><th>métier (prjt flash)</tr>';
+		echo	'<tr><th>id</th><th>nom</th><th>métier (adhérent)</th><th>profession (adhérent)</th><th>formation (adhérent)</th><th>métier (prjt flash)</th></tr>';
 		$rangLgn = 0;
 		while( ($line = mysql_fetch_array($result)) )
 			{
 			if( $rangLgn++ % 2 == 0 )
 				echo '<tr style="background-color:bisque">';
 			else
-				echo '<tr>';
-
+				echo '<tr>
+				';
 			$styleCellules = '';//border:1px solid black;border-bottom:none;border-top:none';
 			echo	'<td style="' . $styleCellules . '">' . $line['id'] . '</td>';
 			echo	'<td style="' . $styleCellules . '">';
-			echo 	'<a href="#" onClick="javascript:popitup(\'ACTFicheAdherent.php'
+			echo 	'<a href="#" onclick="javascript:popitup(\'ACTFicheAdherent.php'
 						. '?prenomNom=' . urlencode($line[ 'prenom' ] . ' ' . $line[ 'nom' ] )
-						. '&fixe=' . $line['telephoneFixe']
-						. '&mobile=' . $line['telephoneMobile']
-						. '&email=' . $line['eMail'] 
-						. '&idAdherent=' . $line['id']
+						. '&amp;fixe=' . $line['telephoneFixe']
+						. '&amp;mobile=' . $line['telephoneMobile']
+						. '&amp;email=' . $line['eMail'] 
+						. '&amp;idAdherent=' . $line['id']
 						. "','Fiche')\">";
 			echo			$line[ 'prenom' ] . ' ' . $line[ 'nom' ];
 			echo 	'</a></td>';
@@ -95,7 +96,8 @@ echo	'<h1>Réseau CPE de ' . $login . '</h1>';
 			.	" AND M.domaine=S.id AND D.id=S.idPere";
 			$result2 = mysql_query($query2) or die('<br>...'.$query2.'<br>...'.mysql_error());
 			if( mysql_num_rows( $result2 ) == 0 )
-				echo '</tr>';
+				echo '
+				</tr>';
 			else
 				{
 				$rangCV = 0;
@@ -111,7 +113,8 @@ echo	'<h1>Réseau CPE de ' . $login . '</h1>';
 						}
 					echo 	'<td style="' . $styleCellules . '">' . $line['DTitre'] . ' - ' . $line['STitre' ] . '</td>';
 						$idAvant = $line[ 'id' ];
-					echo '</tr>';
+					echo '
+					</tr>';
 					}
 				}
 				}
@@ -119,23 +122,23 @@ echo	'<h1>Réseau CPE de ' . $login . '</h1>';
 			echo '<p>Pour voir les informations pour un des membres du réseau : cliquer sur son nom</p>';
 	}
 		
-	echo '<h2>Gestion des membres du réseau</p>';
+	echo '<h2>Gestion des membres du réseau</h2>';
 	echo '</div><div style="margin-left:20em;">';
 	echo '<a href="ACTreseauCreer.php?idReseau=' . $lIdAdherent . '">';
-	echo	'<img src="../images/btnAjouter.png" border="0">';
+	echo	'<img src="../images/btnAjouter.png" alt="Ajouter" />';
 	echo '</a>';
 	if( $nbrMembres > 0 )
 		{
 		echo '<a href="ACTreseauSupprimer.php?idReseau=' . $lIdAdherent . '">';
-		echo	'<img src="../images/btnSupprimer.gif" border="0">';
+		echo	'<img src="../images/btnSupprimer.gif" alt="Supprimer" />';
 		echo '</a>';
 		}
 	echo '</div>';
-?>			<div id="btnRetour">
+?>
+			<div id="btnRetour">
 				<a href="ACTAccueil.php?">
-					<img src="../images/btnRetour.gif" border="0">
+					<img src="../images/btnRetour.gif" alt="Retour" />
 				</a>
 			</div>
-		</div>
 	</body>
 </html>

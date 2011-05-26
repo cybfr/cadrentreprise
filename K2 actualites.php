@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'Entreprise - actualités</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
@@ -18,36 +18,36 @@ require "includes/enTetes.php";
 		<div id="global">
 			<h1>Revue de presse</h1>
 			<div style="padding-left:1em;">
-				<br>
-				<a href="images/2008-02JournalVII.pdf" target="_blank">
+				<br />
+				<a href="images/2008-02JournalVII.pdf">
 					Journal du VIIème Février 2008
 				</a>
-				<br>
-				<a href="images/2007-10MagazineANPE.pdf" target="_blank">
+				<br />
+				<a href="images/2007-10MagazineANPE.pdf">
 					Magazine ANPE Octobre 2007
 				</a>
-				<br>
-				<a href="images/2007-02Rebondir.jpg" target="_blank">
+				<br />
+				<a href="images/2007-02Rebondir.jpg">
 					Rebondir Février 2007
 				</a>
 			</div>
 			<h1>Manifestations professionnelles </h1>
 			<table>
 				<tr>
-					<td width="55%">
-						<img src="images/Stand2.jpg" width="356" height="242" border="0">
+					<td style="width: 55%">
+						<img src="images/Stand2.jpg" width="356" height="242" alt="Stand" />
 					</td>
-					<td width="35%">
+					<td style="width: 35%">
 						Cadres pour l'Entreprise exposant :
 						<div style="margin-left:20px;">
 							<a href="K2%20salons2008.php">
 								aux Salons professionnels 2008
 							</a>
 							<a href="K2%20salons2009.php">
-								<br>aux Salons professionnels 2009
+								<br />aux Salons professionnels 2009
 							</a>
 							<a href="K2%20salons2010.php">
-								<br>aux Salons professionnels 2010
+								<br />aux Salons professionnels 2010
 							</a>
 						</div>
 					</td>
@@ -59,11 +59,11 @@ require "includes/enTetes.php";
 				</tr>
 				<tr>
 					<td>
-						<table style="text-align:center;color:navy;font-style:italic;" border="1" cellspacing="0" width="376" bordercolor="#0033CC" bordercolordark="white" bordercolorlight="#0000CC">
+						<table style="text-align:center;color:navy;font-style:italic; border-color:#0033CC;" border="1" cellspacing="0" width="376">
 							<tr>
-								<td width="110">Ann&eacute;e</td>
-								<td width="128">Nombre de <br>salons visit&eacute;s</td>
-								<td width="124">Salons <br>avec stand CPE</td>
+								<td style="width: 110">Ann&eacute;e</td>
+								<td style="width: 128">Nombre de <br />salons visit&eacute;s</td>
+								<td style="width: 124">Salons <br />avec stand CPE</td>
 							</tr>
 							<tr>
 								<td>2000</td>
@@ -71,17 +71,17 @@ require "includes/enTetes.php";
 								<td>7</td>
 							</tr>
 							<tr>
-								<td><i>2001</td>
+								<td>2001</td>
 								<td>59</td>
 								<td>7</td>
 							</tr>
 							<tr>
-								<td><i>2002</td>
+								<td>2002</td>
 								<td>66</td>
 								<td>7</td>
 							</tr>
 							<tr>
-								<td><i>2003</td>
+								<td>2003</td>
 								<td>79</td>
 								<td>8</td>
 							</tr>

@@ -1,15 +1,4 @@
-<!-- en-têtes -->
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
-		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
-		//	est délimitée par '.m.' et les param au delà du prmier par .p.
-	$lUri = $_SERVER[ 'REQUEST_URI'];
-	$lUrl = 'Location: ../identification1.php?url='
-		. urlencode( $lUri );
-	header( $lUrl );
-	exit;
-	}
 $titrePage = "données personnelles";
 $sncfLibelles = array( 'Accueil', 'Données' );
 $sncfLiens = array( 'ACTAccueil.php' );
@@ -57,11 +46,11 @@ require "includes/ACTenTetes.php";
 			{	// changement de personne ==> affichage projets adh précédent puis entête personne
 			//	photo
 			echo '<div style="float:right">';
-			echo 	'<img src="../photosId/id' . $lIdAdherent . '.png" border="1">';
-			echo	'<p><a href="ACTphotoCharge.php?id=' . $lIdAdherent . '" target="_blank">';
+			echo 	'<img src="../photosId/id' . $lIdAdherent . '.png" alt="Photo" />';
+			echo	'<p><a href="ACTphotoCharge.php?id=' . $lIdAdherent . '">';
 			echo		'pour charger une nouvelle photo';
 			echo	'</a></p>';
-			echo	'<p><a href="ACTphotoSupprime.php?id=' . $lIdAdherent . '" target="_blank">';
+			echo	'<p><a href="ACTphotoSupprime.php?id=' . $lIdAdherent . '">';
 			echo		'pour supprimer cette photo';
 			echo	'</a></p>';
 			echo '</div>';
@@ -118,16 +107,16 @@ require "includes/ACTenTetes.php";
 				{
 				$lUrl = '<a href="../miniCVUnminiCV.php?'
 					. 'retour=' . urlencode( 'espaceActifs/ACTdonnees.php' )
-					. '&idRubrique=' . urlencode( $line[ 'idRubrique' ] )
-					. '&titreProjet=' . urlencode( $line[ 'titre' ] )
-					. '&telephone=' . urlencode( $leTelephone )
-					. '&ref=' . $line[ 'idG' ] . '">' . $line[ 'titre' ] . '</a>';
+					. '&amp;idRubrique=' . urlencode( $line[ 'idRubrique' ] )
+					. '&amp;titreProjet=' . urlencode( $line[ 'titre' ] )
+					. '&amp;telephone=' . urlencode( $leTelephone )
+					. '&amp;ref=' . $line[ 'idG' ] . '">' . $line[ 'titre' ] . '</a>';
 				$lesMiniCVs .= $lUrl . ' (actif), ';
 				$lUrl = '<a href="http://cadrentreprise.asso.fr/miniCVUnminiCV.php?'
-					. '&idRubrique=' . urlencode( $line[ 'idRubrique' ] )
-					. '&titreProjet=' . urlencode( $line[ 'titre' ] )
-					. '&telephone=' . urlencode( $leTelephone )
-					. '&ref=' . $line[ 'idG' ] . '">' . $line[ 'titre' ] . '</a>';
+					. '&amp;idRubrique=' . urlencode( $line[ 'idRubrique' ] )
+					. '&amp;titreProjet=' . urlencode( $line[ 'titre' ] )
+					. '&amp;telephone=' . urlencode( $leTelephone )
+					. '&amp;ref=' . $line[ 'idG' ] . '">' . $line[ 'titre' ] . '</a>';
 				$lesMiniCVs .= '&nbsp;&nbsp;&nbsp;&nbsp;Pour coller ce lien vers votre projet flash : cliquer droit sur le lien, copier puis coller." />';
 				}
 			else

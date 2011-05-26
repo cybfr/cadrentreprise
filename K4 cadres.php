@@ -1,11 +1,11 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'Entreprise - concept original</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
-	</HEAD>
+	</head>
 	<body>
 <!-- en-têtes -->
 <?php
@@ -21,14 +21,14 @@ require "includes/enTetes.php";
 				<a href="K4%20structures.php">
 					structures d'accueil
 				</a>
-				qui vont les aider &agrave; d&eacute;finir un projet professionnel et &agrave; se lancer dans de nouvelles activit&eacute;s professionnelles.<br>&nbsp;
+				qui vont les aider &agrave; d&eacute;finir un projet professionnel et &agrave; se lancer dans de nouvelles activit&eacute;s professionnelles.<br />&nbsp;
 			</p>
 			<table>
 				<tr>
-					<td width="25%">
-						<img src="images/reseau.jpg" width="172" height="172" border="0">
+					<td>
+						<img src="images/reseau.jpg" width="172" height="172" alt="Réseau" />
 					</td>
-					<td width="65%">
+					<td style="width: 65%">
 						Les&nbsp;
 						<a href="K4%20activites.php">
 							activités
@@ -47,11 +47,11 @@ require "includes/enTetes.php";
 				<tr>
 					<td>
 						<a href="K4%20devenir_membre.php">
-							<img src="images/btnAdherer.png" title="Pour adhérer à CPE" style="border:none" />
-						</A>
+							<img src="images/btnAdherer.png" title="Pour adhérer à CPE" style="border:none" alt="Adhérer" />
+						</a>
 					</td>
 					<td>
-						<img src="images/accueil.jpg" width="188" height="165" border="0">
+						<img src="images/accueil.jpg" width="188" height="165" alt="Accueil" />
 					</td>
 				</tr>
 			</table>

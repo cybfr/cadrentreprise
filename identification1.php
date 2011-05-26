@@ -10,13 +10,13 @@
 			$destination = 'url';
 SetCookie( "testClientAccepteCookie", "1" );
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN" "http://www.w3.org/YT/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="HTTP://WWW.W3.ORG/1999/XHTML" xml:lang="FR" lang="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'entreprise - identification</title>
-		<meta name="robots" content="noindex,nofollow">
+		<meta name="robots" content="noindex,nofollow" />
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript">
 			function appelMdp()
 			{
@@ -47,22 +47,22 @@ echo '<div style="visibility:hidden;"></div>';
 		<p>&nbsp;</p>
 <!-- en-têtes -->
 		<h1>Veuillez vous identifier</h1>
-		<form name="leF" action="identification2.php" method="post" enctype="multipart/form-data" name="form">
-<?php
-echo '<input name="dest" value="' . $destination . '" type="hidden">';
-if( isset( $_GET[ 'url' ] ) )
-	echo '<input name="url" value="' . $_GET[ 'url' ] . '" type="hidden">';
-//echo '<br>...' . $_GET[ 'url' ] . '...';
-?>
+		<form id="leF" action="identification2.php" method="post" enctype="multipart/form-data">
 			<table border="0" cellpadding="5" cellspacing="0" width="580">
 				<tr>
-					<td width="30%">votre identifiant :</td>
-					<td width="70%">
+					<td>votre identifiant :</td>
+					<td>
+<?php
+echo '<input name="dest" value="' . $destination . '" type="hidden" />';
+if( isset( $_GET[ 'url' ] ) )
+	echo '<input name="url" value="' . $_GET[ 'url' ] . '" type="hidden" />';
+//echo '<br>...' . $_GET[ 'url' ] . '...';
+?>
 <?php
 	if( $_SERVER['HTTP_HOST'] == 'localhost' )
-		echo			'<input type="text" value="croy" name="login" size="15">';
+		echo			'<input type="text" value="croy" name="login" size="15" />';
 	else
-		echo			'<input type="text" value="" name="login" size="15">';
+		echo			'<input type="text" value="" name="login" size="15" />';
 ?>
 					</td>
 				</tr>
@@ -74,9 +74,9 @@ if( isset( $_GET[ 'url' ] ) )
 								<td>
 <?php
 	if( $_SERVER['HTTP_HOST'] == 'localhost' )
-		echo			'<input type="password" value="" name="mdp" size="15">';
+		echo			'<input type="password" value="" name="mdp" size="15" />';
 	else
-		echo			'<input type="password" value="" name="mdp" size="15">';
+		echo			'<input type="password" value="" name="mdp" size="15" />';
 ?>
 								</td>
 								<td>
@@ -89,13 +89,13 @@ if( isset( $_GET[ 'url' ] ) )
 					</td>
 				</tr>
 			</table>
-			<br><br>
-			<input type="image" value="Envoyer" src="images/btnValider.gif">
-		</form>
-		<script> { document.leF.login.focus(); } </script>
-		<a href="index.php">
-			<img src="images/btnAnnuler.gif">
-		</a>
+<p>			<br /><br />
+			<input type="image" value="Envoyer" src="images/btnValider.gif" />
+</p>		</form>
+				<script type="text/javascript">{ document.leF.login.focus(); } </script>
+<p>		<a href="index.php">
+			<img src="images/btnAnnuler.gif" alt="Annuler" />
+		</a></p>
 	</body>
 </html>
 <?php
@@ -123,4 +123,5 @@ if( isset( $_GET[ 'url' ] ) )
 			}
 		exit( 0 );
 		}
+
 ?>

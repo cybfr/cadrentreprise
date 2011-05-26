@@ -116,7 +116,7 @@ require 'includes/librairie.php';
 		</div>
 		<div id="cdeFer">
 			<a href="contact.php">Contact</a>
-			&nbsp;>&nbsp;
+			&nbsp;&gt;&nbsp; </div>
 <?php
 	echo 	"<a href=\"contactSaisie.php?destinataire=" . $_POST['destinataire'] . "\">Saisie</a>";
 	echo 	"&nbsp;>&nbsp;";

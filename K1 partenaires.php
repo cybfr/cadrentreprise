@@ -1,9 +1,9 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 STRICT//EN">
-<html XMLS="HTTP://WWW.W3.ORG/1999/XHTML" XML:LANG="FR" LANG="FR">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
 	<head>
 		<title>CPE - Cadres pour l'entreprise - partenaires</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" type="text/css" HREF="css/style.css">
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script type="text/javascript" src="script.js"></script>
 	</head>
 	<body>
@@ -19,76 +19,77 @@ require "includes/enTetes.php";
 	<div id="global">
 		<h1>Nos partenaires :</h1>
 
-		<table style="margin-bottom:10;" align="center" border="0">
+		<table style="margin-bottom:10;" border="0">
 			<tr>
-				<td height="94">
-					<a href="http://www.lexpansion.com/" target="_blank">
-						<IMG SRC="images/expansion.jpg" WIDTH="155" HEIGHT="45" ALIGN=bottom>
+				<td>
+					<a href="http://www.lexpansion.com/">
+						<img src="images/expansion.jpg" width="155" height="45" alt="L'expansion"/>
 					</a>
 				</td>
-				<td height="94">
-					<a href="http://www.exposium.com/exposium/index.jsp" target="_blank">
-						<img src="exposium.jpg" width="72" height="77">
+				<td>
+					<a href="http://www.exposium.com/exposium/index.jsp">
+						<img src="exposium.jpg" width="72" height="77" alt="Exposium"/>
 					</a>
 				</td>
-				<td height="94">
-					<a href="http://www.foiredeparis.fr" target="_blank">
-						<img src="images/FoireParis.jpg" width="145" height="94">
+				<td>
+					<a href="http://www.foiredeparis.fr">
+						<img src="images/FoireParis.jpg" width="145" height="94" alt="Foire de Paris" />
 					</a>
 				</td>
-				<td height="94">
-					<a href="http://cqfd.asso.free.fr" target="_blank" target="_self">
-						<img src="images/CQFD.gif" width="92" height="78">
+				<td>
+					<a href="http://cqfd.asso.free.fr">
+						<img src="images/CQFD.gif" width="92" height="78" alt="CQFD" />
 					</a>
 				</td>
 			</tr>
 			<tr>
 				<td >
-					<a href="http://www.batimat.com/" target="_blank">
-						<img src="images/batimat.jpg" width="163" height="69">
+					<a href="http://www.batimat.com/">
+						<img src="images/batimat.jpg" width="163" height="69" alt="BatiMat" />
 					</a>
 				</td>
 				<td>
-					<a href="http://www.midest.com/" target="_blank">
-						<img src="images/midest.gif" width="143" height="120"">
+					<a href="http://www.midest.com/">
+						<img src="images/midest.gif" width="143" height="120" alt="MidEst" />
 					</a>
 				</td>
 				<td>
-					<a href="http://www.reedexpo.com" target="_blank">
-						<img src="images/reed.gif" width="216" height="48">
+					<a href="http://www.reedexpo.com">
+						<img src="images/reed.gif" width="216" height="48" alt="Reed" />
 					</a>
 				</td>
 				<td>
-					<a href="http://www.jardin-paysage.com/ExposiumCms/do/admin/visu?reqCode=accueil" target="_blank">
-						<img src="images/Jardi.GIF" width="96" height="163">
+					<a href="http://www.jardin-paysage.com/ExposiumCms/do/admin/visu?reqCode=accueil">
+						<img src="images/Jardi.GIF" width="96" height="163" alt="Jardin-Paysage" />
 					</a>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<img src="images/smbtp.jpg" width="130" height="73">
+					<img src="images/smbtp.jpg" width="130" height="73" alt="SMBTP" />
 				</td>
 				<td>
-					<a href="http://www.pollutec.com/" target="_blank">
-						<img src="images/Pollut.gif" width="163" height="54">
+					<a href="http://www.pollutec.com/">
+						<img src="images/Pollut.gif" width="163" height="54" alt="Pollutech" />
 				</a>
 				</td>
 				<td>
-					<a href="http://www.seniorplanet.fr" target="_blank">
-						<img src="images/SeniorPlanet.gif" width="319" height="78">
+					<a href="http://www.seniorplanet.fr">
+						<img src="images/SeniorPlanet.gif" width="319" height="78" alt="Senior Planet" />
 					</a>
 				</td>
 				<td>
-					<a href="http://www.comexpo-paris.com" target="_blank">
-						<img src="images/comexpo.gif" width="79" height="79">
+					<a href="http://www.comexpo-paris.com">
+						<img src="images/comexpo.gif" width="79" height="79" alt="ComExpo" />
 					</a>
 				</td>
 			</tr>
 		</table>
 		<div id="btnRetour">
 			<a href="index.php">
-				<img src="images/btnRetour.gif">
+				<img src="images/btnRetour.gif" alt="Retour" />
 			</a>
+		</div>
 		</div>
 		<!--<p id="piedDePage"></p>-->
 	</body>

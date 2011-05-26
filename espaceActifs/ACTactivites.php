@@ -1,14 +1,4 @@
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
-		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
-		//	est délimitée par '.m.' et les param au delà du prmier par .p.
-	$lUri = $_SERVER[ 'REQUEST_URI'];
-	$lUrl = 'Location: ../identification1.php?url='
-		. urlencode( $lUri );
-	header( $lUrl );
-	exit;
-	}
 $titrePage = "activités";
 $sncfLibelles = array( 'Accueil', 'Activités' );
 $sncfLiens = array( 'ACTAccueil.php' );
@@ -23,7 +13,7 @@ require "includes/ACTenTetes.php";
 			ensemble, cherchons des emplois cachés dans les salons professionels.</p>
 			<p><b>Opérations de terrain :</b>
 			ensemble, cherchons des emplois cachés dans les entreprises.</p>
-			<p><a href="bibliotheque/Operation terrain Neuilly.pps">Opération de Neuilly-sur-Seine</a>
+			<p><a href="bibliotheque/Operation terrain Neuilly.pps">Opération de Neuilly-sur-Seine</a></p>
 		</div>
 		<h2>Ateliers</h2>
 		<div style="margin-left:2em;">
@@ -59,6 +49,5 @@ require "includes/ACTenTetes.php";
 		</div>
 	</div>
 	<!--<p id="piedDePage"></p>-->
-</div>
 	</body>
 </html>

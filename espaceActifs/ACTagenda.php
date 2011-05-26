@@ -1,15 +1,4 @@
-<!-- en-têtes -->
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
-		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
-		//	est délimitée par '.m.' et les param au delà du prmier par .p.
-	$lUri = $_SERVER[ 'REQUEST_URI'];
-	$lUrl = 'Location: ../identification1.php?url='
-		. urlencode( $lUri );
-	header( $lUrl );
-	exit;
-	}
 $titrePage = "agenda";
 $sncfLibelles = array( 'Accueil', 'Agenda' );
 $sncfLiens = array( 'ACTAccueil.php' );
@@ -53,34 +42,29 @@ else
 ?>
 
 		<div class="selectionActivites">
-			<p>choix des activités affichées : 
 				<form action="ACTagenda.php" method="get">
+			<p>choix des activités affichées : 
 <?php
-echo				'<input type="hidden" name="leMois" value="'
-						. $leMois . "," . $lAnnee
-						. '">';
+echo				'<input type="hidden" name="leMois" value="'.$leMois.",".$lAnnee.'" />';
 ?>
 					<select name='groupe' size='1'>
-						<option value='toutes' selected='1'>Toutes</option>
+						<option value='toutes' selected='selected'>Toutes</option>
 <?php
 	require "../includes/mySql.php";
 
 	$query = "SELECT id, titre from tblGroupes";
 	$result = mysql_query($query);	// or die("erreur 3");
-	while( ($line = mysql_fetch_assoc($result)) )
-		{
-		echo 			"<option value='" . $line[ 'id' ] . "'";
-		if( $leGroupe != $line[ 'id' ] )
-			echo 			"'>";
-		else
-			echo 			"' selected='1'>";
-		echo 				$line[ 'titre' ] . "</option>";
+	while( ($line = mysql_fetch_assoc($result)) ){
+		echo 			"<option value='" . $line['id'] . "'";
+		if($leGroupe == $line['id']) echo " selected='selected'";
+		echo ">";
+		echo htmlspecialchars($line['titre'])."</option>";
 		}
 ?>
 					</select>
-					<input type="submit" value=" ok " >
-				</form>
+					<input type="submit" value=" ok " />
 			</p>
+				</form>
 		</div>
 <?php
 $lePremierJourDuMois = $lAnnee . '-' . $leMois . '-1';
@@ -183,29 +167,25 @@ $indxCaseDuJour =
 		 $todayJour - $rangJourPremiereCase : -100;
 
 //	affichage de l'agenda
-	echo '<div class="main">';
-	echo	'<table class="main" cols="7" cellpadding="0" border="1" cellspacing="0">';
-	echo		'<colgroup width="150px" span="7">';
-	echo		'<tr align="center">';
-	echo			'<td><a href="ACTagenda.php?leMois='
+	echo '<div class="main">
+	<table class="main" cellpadding="0" border="1" cellspacing="0">
+	<colgroup width="150px" span="7"></colgroup>
+	<tr align="center">
+	<td><a href="ACTagenda.php?leMois='
 						. ($leMois-1) . ',' . $lAnnee;
-	if( isset( $_GET[ 'urlRetour' ] ) )
-		echo 				'&urlRetour=' . $_GET[ 'urlRetour' ];
-	if( $recherche ) 
-		echo				'&recherche';
-	echo 					'&lesAutor=' . $lActivite . '">';
-	echo				'<img src="../images/chevronG.gif" /></a></td>';
+	if(isset($_GET['urlRetour'])) echo '&urlRetour=' . $_GET[ 'urlRetour' ];
+	if($recherche) echo '&recherche';
+	echo 					'&amp;lesAutor=' . $lActivite . '">';
+	echo				'<img src="../images/chevronG.gif" alt="&lt;" /></a></td>';
 	echo 			'<td colspan="5" align="center" class="month">'.$lesMois[ $leMois-1 ].' - '.$lAnnee .'</td>';
 	echo			'<td><a href="ACTagenda.php?leMois='
 						. ($leMois+1) . ',' . $lAnnee;
-	if( isset( $_GET[ 'urlRetour' ] ) )
-		echo 				'&urlRetour=' . $_GET[ 'urlRetour' ];
-	if( $recherche ) 
-		echo				'&recherche';
-	echo					'&lesAutor=' . $lActivite . '">';
-	echo				'<img src="../images/chevronD.gif" /></a></td>';
-	echo		'</tr>';
-	echo		'<tr align="center">';
+	if(isset($_GET['urlRetour'])) echo '&urlRetour=' . $_GET[ 'urlRetour' ];
+	if($recherche) echo	'&amp;recherche';
+	echo					'&amp;lesAutor=' . $lActivite . '">';
+	echo				'<img src="../images/chevronD.gif" alt="&gt;"/></a></td>';
+	echo		'</tr>
+				<tr align="center">';
 	for( $s=0; $s<7; $s++)	//	affichage entêtes jours
 		echo 		'<td class="daysOfWeek">' . substr("DLMMJVS",$s,1) . '</td>';
 	echo 		'</tr>';
@@ -232,7 +212,7 @@ $indxCaseDuJour =
 												. '&titreEvt=' . urlencode($line[ 'leTitre' ].' du '.$line[ 'leJour' ] . '/' . $leMois . "/" . $lAnnee)
 												. '&mois=' .$leMois . "/" . $lAnnee . '">';
 				else
-					echo					'<a class="info" href="#" onClick="javascript:popitup'
+					echo					'<a class="info" href="#" onclick="javascript:popitup'
 												. "('ACTagendaDetail.php?evt=" . $line[ 'lId' ] . "')\">";
 				if( $line['lHeureDebut'] != "00:00" )
 					{
@@ -241,9 +221,9 @@ $indxCaseDuJour =
 						echo '-' . $line['lHeureFin'];
 					echo ' ';
 					}
-				echo $line['leTitre'];
+				echo htmlspecialchars($line['leTitre']);
 				if( $line[ 'leTexte' ] != '' )
-					echo					'<span>' . nl2br( $line[ 'leTexte' ] ) . '</span>';
+					echo '<span>'.nl2br(htmlspecialchars($line['leTexte'])).'</span>';
 				echo					'</a>';
 				$line = next( $lesEvts );
 				$leJourEvtEnCours = $line[ 'leJour' ];
@@ -264,12 +244,10 @@ $indxCaseDuJour =
 				break;
 			}
 		}
-	echo 		'</tr></table></div>';
-
-	echo "<h2>Les inscriptions à ces activités sont exclusivement effectuées pendant les réunions hebdomadaires du mardi.</h2>";
 ?>
+</tr></table></div>
+<h2>Les inscriptions à ces activités sont exclusivement effectuées pendant les réunions hebdomadaires du mardi.</h2>
 		</div>
 		<!--<p id="piedDePage"></p>-->
-	</div>
 	</body>
 </html>

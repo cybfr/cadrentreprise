@@ -12,12 +12,12 @@ function affichageHTMLunProjetFlash( $line, $rangCol, $queryString, $avecLien = 
 	echo '<td><div style="width:9.6cm;height:5.1cm;overflow:auto;">';
 	if( $avecLien )
 		echo	'<a href="miniCVUnMiniCV.php?' . $queryString
-			. '&titreProjet=' . urlencode( $line[ 'titre' ] )
-			. '&telephone=' . $leTelephone
-			. '&ref=' . $line[ 'id']
- 			. '">';
-	echo 	'<div class="titre">' . nl2br(stripslashes($line[ 'titre' ])) . '</div>';
-	echo 	'<div class="sousTitre">' . nl2br(stripslashes($line[ 'sousTitre' ])) . '</div>';
+			. '&amp;titreProjet=' . urlencode( $line[ 'titre' ] )
+			. '&amp;telephone=' . $leTelephone
+			. '&amp;ref=' . $line[ 'id']
+ 			. '"><object>';
+	echo 	'<div class="titre">' . nl2br(htmlspecialchars(stripslashes($line['titre']))) . '</div>';
+	echo 	'<div class="sousTitre">' . nl2br(htmlspecialchars(stripslashes($line['sousTitre']))) . '</div>';
 	echo 	'<div class="pointsForts"><ul>';
 	$lesPtsForts = explode( "\n", $line[ 'pointsForts' ] );
 	$rangAlinea = 0;
@@ -47,7 +47,7 @@ if( false )
 					echo '<ul style="list-style:none;">';
 					$rangAlinea++;
 					}
-				echo '<li>' . $lePtFort . '</li>';
+				echo '<li>' . htmlspecialchars($lePtFort) . '</li>';
 				}
 			else
 				{
@@ -56,16 +56,16 @@ if( false )
 					echo '</ul>';
 					$rangAlinea = 0;
 					}
-				echo '<li>' . stripcslashes($lePtFort) . '</li>';
+				echo '<li>' . htmlspecialchars(stripcslashes($lePtFort)) . '</li>';
 				}
 			}
 		}
 	echo 		'</ul></div>';
-	echo 	'<div class="complements">' . nl2br( $line['complements'] ) . '</div>';
+	echo 	'<div class="complements">' . nl2br(htmlspecialchars($line['complements'])) . '</div>';
 	//echo 	'<div class="telephone">tél. <b>' . $leTelephone . '</b></div>'; 
 	//echo 	'<div class="reference">réf. CPE <b>' . $line['id'] . '</b></div>'; 
 	if( $avecLien )
-		echo '</a>';
+		echo '</object></a>';
 	echo '</div></td>';
 
 	if( $rangCol == 1 ) echo '</tr>';

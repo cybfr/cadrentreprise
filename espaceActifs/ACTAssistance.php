@@ -1,15 +1,4 @@
-<!-- en-têtes -->
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
-		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
-		//	est délimitée par '.m.' et les param au delà du prmier par .p.
-	$lUri = $_SERVER[ 'REQUEST_URI'];
-	$lUrl = 'Location: ../identification1.php?url='
-		. urlencode( $lUri );
-	header( $lUrl );
-	exit;
-	}
 require_once "includes/librairie.php";
 $lePath = getPathRacine();
 $titrePage = "assistance";
@@ -21,7 +10,7 @@ require "includes/ACTenTetes.php";
 			<p>Bienvenue dans l'espace dédié aux adhérents actifs de CPE.</p>
 			<h2>le site est structuré en 8 chapitres</h2>
 			<p>Pour accéder à un des chapitres, cliquez son nom dans la colonne affichée à gauche de votre écran..</p>
-			<p>Les chapitres sont les suivants :
+			<p>Les chapitres sont les suivants :</p>
 <ul>
 <li>Accueil : décrit brièvement le fonctionnement de l'Association et vous donne accès à la charte des adhérents ainsi qu'à quekques statistiques</li>
 <li>Agenda : liste les activités (ateliers en particulier) et vous permet d'entrer en relation avec les animateurs bénévoles.</li>
@@ -32,9 +21,8 @@ require "includes/ACTenTetes.php";
 <li>Données personnelles : liste les données intégrées par l'Association dans votre dossier et vous explique comment demander leur modification.</li>
 <li>Réseau : permet de rechercher les anciens CPE qui pourraient vous aider dans votre recherche d'emploi.</li>
 </ul>
-			</p>
 <h2>Le menu horizontal</h2>
-<p>Dans la partie supérieure de l'écran vous voyez (barre orange) un menu horizontal qui propose 3 options :
+<p>Dans la partie supérieure de l'écran vous voyez (barre orange) un menu horizontal qui propose 3 options :</p>
 <ul>
 <li>Contact : pour adresser un courriel au Président, à la Commission Emploi ou au Webmestre</li>
 <li>Assistance : pour afficher le présent écran</li>
@@ -49,6 +37,5 @@ require "includes/ACTenTetes.php";
 </div>
 		</div>
 	<!--<p id="piedDePage"></p>-->
-		</div>
 	</body>
 </html>

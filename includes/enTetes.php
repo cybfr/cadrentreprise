@@ -1,16 +1,15 @@
+<!-- En-tête -->
+<!-- phpdigExclude -->
+<div id="header">
+<img src="images/logo100.gif" alt="logo CPE" />
+<p>Cadres pour l'Entreprise</p>
+</div>
+<!-- Menu accès rapide -->
+<ul id="menuhaut">
+<li><a href="index.php" accesskey="1">Retour à l'accueil</a> - </li>
+<li><a href="#" accesskey="2" onclick="popitup('contact.php','Contact')">Contact</a> - </li>
+<li><a href="identification1.php?dest=prives" accesskey="3">
 <?php
-// En-tête -->
-echo "\n" . '<!-- phpdigExclude -->' . "\n";
-echo '<div id="header">';
-echo	'<img src="images/logo100.gif" alt="logo CPE">';
-echo	'<p>Cadres pour l\'Entreprise</p>';
-echo '</div>';
-// Menu accès rapide -->
-echo '<ul id="menuhaut">';
-echo	'<li><a href="index.php" accesskey="1">Retour à l\'accueil</a> - </li>';
-echo	'<li><a href="#" accesskey="2" onClick="popitup'
-	. "('contact.php','Contact')\">Contact - </li>";
-echo	'<li><a href="identification1.php?dest=prives" accesskey="3">';
 if( !isset( $_COOKIE['CPEid'] ) )
 	echo 'Espaces privés';
 else
@@ -28,32 +27,33 @@ else
 			echo 'Espaces privés';
 		}
 	}
-echo 	'</a></li>';
-echo '</ul>';
-// Menu de navigation générale -->
-//echo '<div id="teteDePage">';
-echo 	'<div id="menu">';
-echo		'<ul>';
-echo			'<li><a href="index.php" accesskey="a" style="color:grey;">Accueil</a></li>';
-echo			'<li><a href="K2%20actualites.php" accesskey="b">Actualités</a></li>';
-echo			'<li><a href="K4%20cadres.php" accesskey="c">Vous êtes un cadre</a></li>';
-echo			'<li><a href="K3%20entreprises.php" accesskey="d">Vous êtes une entreprise</a></li>';
-echo		'</ul>';
-// Formulaire de recherche -->
-echo		'<p>Recherche</p>';
-echo		'<form action="search/search.php" method="post">';
-echo			'<div>';
-echo				'<input type="text"  accesskey="r" name="query_string" class="champ" value="mot-clé" >';
-echo				'<br><input type="submit" value=" ok " style="margin: 10px 0 0 20px;" >';
-//echo				'<input type="hidden" name="option" value="exact" >';
-if( isset( $sncfLibelles ) )
-	{
+?>
+</a></li>
+</ul>
+<!-- Menu de navigation générale -->
+<div id="menu">
+<ul>
+<li><a href="index.php" accesskey="a" style="color:grey;">Accueil</a></li>
+<li><a href="K2%20actualites.php" accesskey="b">Actualités</a></li>
+<li><a href="K4%20cadres.php" accesskey="c">Vous êtes un cadre</a></li>
+<li><a href="K3%20entreprises.php" accesskey="d">Vous êtes une entreprise</a></li>
+</ul>
+<!-- Formulaire de recherche -->
+<p>Recherche</p>
+<form action="search/search.php" method="post">
+<div>
+<input type="text"  accesskey="r" name="query_string" class="champ" value="mot-clé" />
+<br /><input type="submit" value=" ok " style="margin: 10px 0 0 20px;" />
+<input type="hidden" name="option" value="exact" />
+<?php 
+
+if( isset( $sncfLibelles ) )	{
 	$i = 0;
 	foreach( $sncfLibelles as $ii => $leLibelle )
 		{
 		echo '<input type="hidden" name="sncf[' . $leLibelle . ']" value="';
 		if( $sncfLiens[$i] != '' )
-			echo $sncfLiens[$i] . '" > ';
+			echo $sncfLiens[$i] . '" /> ';
 		else
 			{
 			if( $i == count( $sncfLibelles ) - 1 )
@@ -64,28 +64,30 @@ if( isset( $sncfLibelles ) )
 					{
 					$leFichier .= '?retour=' . $_GET['retour'];
 					if( isset( $_GET[ 'idRubrique' ] ) )
-						$leFichier .= '&idRubrique=' . $_GET['idRubrique'];
+						$leFichier .= '&amp;idRubrique=' . $_GET['idRubrique'];
 					}
-				echo $leFichier . '" > ';
+				echo $leFichier . '" /> ';
 				}
 			else
-				echo '" > ';
+				echo '" /> ';
 			}
 		$i++;
 		}
 	}
-echo			'</div>';
-echo		'</form>';
+?>
+</div>
+</form>
+<?php 
 // flèches précisant section en cours
 if( false )
 {
 echo 		'<div style="position:absolute; top:';
 $leTop = 3.3 + $lEtage*3.6;
 echo 			$leTop . 'em; left:1em;">';
-echo			'<img src="images/pointillesHorizontaux.gif">';
+echo			'<img src="images/pointillesHorizontaux.gif" />';
 echo 		'</div>';
 echo 		'<div style="position:absolute; top:0.3em; left:14.1em; text-align:right;">';
-echo 			'<img src="images/pointilles' . $lEtage . '.gif">';
+echo 			'<img src="images/pointilles' . $lEtage . '.gif" />';
 echo 		'</div>';
 }
 echo 	'</div>';
@@ -110,20 +112,23 @@ if( isset( $nomPage ) AND $_SERVER['HTTP_HOST'] == 'cadrentreprise.free.fr' )
 	<div style="margin:0px;padding:0px;height:1px;">
 	<!-- phpmyvisites -->
 	<a href="http://st.free.fr/" title="phpMyVisites | Open source web analytics" 
-	onclick="window.open(this.href);return(false);"><script type="text/javascript">
+	onclick="window.open(this.href);return(false);">
+	<script type="text/javascript">
 	<!--
 	var a_vars = Array();
-	<?php
-	echo "var pagename='" . $nomPage . "'\n";
-	?>
+	var pagename= <?php echo $nomPage ?>;
 	var phpmyvisitesSite = 41478;
 	var phpmyvisitesURL = "http://st.free.fr/phpmyvisites.php";
 	//-->
 	</script>
-	<script language="javascript" src="http://st.free.fr/phpmyvisites.js" type="text/javascript"></script>
-	<object><noscript><p>phpMyVisites | Open source web analytics
-	<img src="http://st.free.fr/phpmyvisites.php" alt="Statistics" style="border:0" />
-	</p></noscript></object></a>
+	<object>
+	<script  type="text/javascript" src="http://st.free.fr/phpmyvisites.js">
+	</script>
+	<noscript> <p>phpMyVisites | Open source web analytics
+	<img src="http://st.free.fr/phpmyvisites.php" alt="Statistics" />
+	</p></noscript>
+	</object>
+	</a>
 	</div>
 	<!-- /phpmyvisites --> 
 <?php

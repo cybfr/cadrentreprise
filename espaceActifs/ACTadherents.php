@@ -1,20 +1,10 @@
 <?php
-if( !isset( $_COOKIE['CPEid'] ) )
-	{	// cookie pas défini : on va vers l'authentification
-		//	avec l'url cible en paramètre (dans cette url cible, l'ancre
-		//	est délimitée par '.m.' et les param au delà du prmier par .p.
-	$lUri = $_SERVER[ 'REQUEST_URI'];
-	$lUrl = 'Location: ../identification1.php?url='
-		. urlencode( $lUri );
-	header( $lUrl );
-	exit;
-	}
 $titrePage = 'adhérents';
 $sncfLibelles = array( 'Accueil', 'Adhérents CPE' );
 $sncfLiens = array( 'ACTAccueil.php' );
 require "includes/ACTenTetes.php";
 ?>
-			<script language="JavaScript">
+			<script type="text/javascript">
 			<!--
 			function recharger()
 				{	//	rechargement suite à changement id ou nom
@@ -79,15 +69,15 @@ if( isset( $_GET[ 'idOuNom' ] ) OR isset( $_GET[ 'prenom' ] ) )
 	}
 if( true )
 	{	//	choix adhérent
-	echo '<form name="leF" action="ACTadherents.php" method="get" style=margin-top:5em;">';
+	echo '<form id="leF" action="ACTadherents.php" method="get" style="margin-top:5em;">';
 	echo '<table>';
 	echo	'<tr><td>id ou tout ou partie du nom de l\'adhérent</td>';
-	echo		'<td><input type="text" name="idOuNom" value="' . $_GET[ 'idOuNom' ] . '" ></td></tr>';
+	echo		'<td><input type="text" name="idOuNom" value="' . $_GET[ 'idOuNom' ] . '" /></td></tr>';
 	echo	'<tr><td colspan="2">&nbsp;&nbsp;&nbsp;ou bien</td></tr>';
 	echo	'<tr><td>prénom de l\'adhérent</td>';
-	echo		'<td><input type="text" name="prenom" value="' . $_GET[ 'prenom' ] . '" ></td></tr>';
-	echo	'<tr><td>&nbsp</td><td>';
-	echo		'<input type="button" value="Rechercher" onClick="javascript:recharger();"></td>';
+	echo		'<td><input type="text" name="prenom" value="' . $_GET[ 'prenom' ] . '" /></td></tr>';
+	echo	'<tr><td>&nbsp;</td><td>';
+	echo		'<input type="button" value="Rechercher" onclick="javascript:recharger();" /></td></tr>';
 	echo	'<tr>';
 	if( $nbrAdherents == 0 )
 		echo '<td colspan="2">Aucun adhérent sélectionné';
@@ -98,11 +88,11 @@ if( true )
 		$l = mysql_fetch_assoc( $res );
 		$lUrl = 'ACTFicheAdherent.php'
 			. '?prenomNom=' . urlencode( $tabPrenomsNoms[0] )
-			. '&fixe=' . $l['telephoneFixe']
-			. '&mobile=' . $l['telephoneMobile']
-			. '&email=' . $l['eMail'] 
-			. '&idAdherent=' . $l['id']
-			. '&statut=' . $l[ 'statut' ];
+			. '&amp;fixe=' . $l['telephoneFixe']
+			. '&amp;mobile=' . $l['telephoneMobile']
+			. '&amp;email=' . $l['eMail'] 
+			. '&amp;idAdherent=' . $l['id']
+			. '&amp;statut=' . $l[ 'statut' ];
 		echo	'<a style="text-decoration:underline" onclick="popitup(\'' . $lUrl
 					. '\',\'Fiche\');return false;" >';
 		echo		$tabIds[0] . '-' . $tabPrenomsNoms[0] . ' sélectionné';
@@ -126,7 +116,7 @@ else
 	}
 ?>			<div id="btnRetour">
 				<a href="ACTAccueil.php?">
-					<img src="../images/btnRetour.gif" border="0">
+					<img src="../images/btnRetour.gif" alt="Retour" />
 				</a>
 			</div>
 		</div>
