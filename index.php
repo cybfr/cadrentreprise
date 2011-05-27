@@ -15,6 +15,7 @@
 		<meta name="copyright" content="CPE - Cadres pour l'Entreprise" />
 		<meta name="identifier-url" content="http://cadrentreprise.asso.fr" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/style_new.css" />
 <?php
 if( $_SERVER[ 'SERVER_NAME' ] == 'localhost' 
 	|| $_SERVER[ 'SERVER_NAME' ] == 'imac-g5-de-christian-roy.local' )

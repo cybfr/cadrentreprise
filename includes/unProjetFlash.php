@@ -39,7 +39,7 @@ if( false )
 			//	suppression caractère retour chariot en fin de pt fort
 			$lgn = strlen( $lePtFort );
 			if( ord( substr( $lePtFort, $lgn-1, 1 ) ) == 13 )
-			$lePtFort = substr( $lePtFort, 0, $lgn - 1 );
+				$lePtFort = substr( $lePtFort, 0, $lgn - 1 );
 			if( substr( $lePtFort, 0, 1 ) == '-' )
 				{	//	alinéa de niveau 2
 				if( $rangAlinea == 0 )

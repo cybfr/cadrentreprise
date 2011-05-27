@@ -25,6 +25,53 @@ else
 	<link rel="stylesheet" type="text/css" href="<?php echo $prefixe ?>css/ACTstyle.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo $prefixe ?>css/ACTstylePrint.css" media="print" />
 	<script type="text/javascript" src="<?php echo $prefixe ?>../script.js"></script>
+	<link rel="stylesheet" href="/css/jquery.ui.all.css" />
+	<script src="/js/jquery-1.5.1.min.js" type="text/javascript"></script>
+	<script src="/js/jquery-ui-1.8.13.custom.min.js" type="text/javascript"></script>
+	<script src="/js/jquery.ui.autocomplete.html.js" type="text/javascript"></script>
+
+		<style type="text/css"> 
+	.ui-autocomplete-loading { background: white url('images/ui-anim_basic_16x16.gif') right center no-repeat; }
+	em {color:red; font-style:normal; text-decoration:bold;}
+		td
+			{background-color:#efefef;border:5px ridge #a0a0ff;}
+		td a
+			{text-decoration:none;}
+		.titre
+			{text-align:center;font-family:arial;font-size:1.3em;font-style:italic;font-weight:bold;padding-bottom:0.3em;}
+		.sousTitre
+			{text-align:center;text-transform:uppercase;font-size:0.9m;font-style:normal;padding-bottom:0.3em;}
+		.pointsForts
+			{padding: 0.8em 0 1em 0.8em;text-align:left;font-size:0.9em;list-style-type:circle;list-style-position:outside;}
+		.pointsForts ul
+			{margin:0px;padding-left:10px;}
+		.complements
+			{padding-left:20px;padding-top:2px;font-size:0.9em;text-align:left;font-style:italic;}
+		.telephone
+			{float:left;padding-top:1em;padding-left:20px;}
+		.reference
+			{float:right;padding-top:1em;padding-right:20px;}
+		</style> 
+			<script type="text/javascript">
+			<!--
+			function recharger()
+				{	//	rechargement suite à changement id ou nom
+				if( document.leF.idOuNom.value != '' )
+					lesParams = '?idOuNom=' + document.leF.idOuNom.value
+				else
+					lesParams = '?prenom=' + document.leF.prenom.value;
+				window.location="ACTadherents.php"
+					+ lesParams;
+				}
+			function recharger2()
+				{	//	rechargement suite à choix dans popup
+				lesParams = '?idOuNom=' + document.leF.noms.value;
+				window.location="ACTadherents.php"
+					+ lesParams;
+				}
+			//-->
+			</script>
+	
 <?php  if( isset( $tagSupplementaire ) ) echo $tagSupplementaire; ?>
 	</head>
 	<body>
